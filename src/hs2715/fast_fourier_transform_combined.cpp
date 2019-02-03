@@ -16,8 +16,8 @@ namespace hs2715
 class fast_fourier_transform_combined
 	: public fourier_transform
 {
-size_t loop_K; 
-size_t recursion_K; 
+size_t K_recur; 
+size_t K_loop; 
 protected:
 	/* Standard radix-2 FFT only supports binary power lengths */
 	virtual size_t calc_padded_size(size_t n) const
@@ -48,18 +48,18 @@ protected:
 		}else{
 			size_t m = n/2;
 
-			//Create parallel work
-			if (n>recursion_K){
+			
+			if (n>K_recur){
 				tbb::task_group group; 
 				group.run( [&](){ recurse(m,wn*wn,pIn,2*sIn,pOut,sOut); } );
 				group.run( [&](){ recurse(m,wn*wn,pIn+sIn,2*sIn,pOut+sOut*m,sOut); } );
 				group.wait(); 
-			}else{ //Run sequential version
+			}else{ 
 				recurse(m,wn*wn,pIn,2*sIn,pOut,sOut);
 				recurse(m,wn*wn,pIn+sIn,2*sIn,pOut+sOut*m,sOut);
 			}
 
-			if(m<=loop_K){ //use original code
+			if(m<=K_loop){ 
 				complex_t w=complex_t(1,0);
 				for (size_t j=0;j<m;j++){
 				 	 complex_t t1 = w*pOut[m+j];
@@ -68,8 +68,8 @@ protected:
 				 	 pOut[j+m] = t2;                          /*  pOut[j] = pOut[j] - w^i pOut[m+j] */
 					 w = w*wn;
 				}
-			}else{ //use parallel version
-				tbb::parallel_for(tbb::blocked_range<unsigned>(0,m,loop_K), [&](const tbb::blocked_range<unsigned> &chunk){
+			}else{ 
+				tbb::parallel_for(tbb::blocked_range<unsigned>(0,m,K_loop), [&](const tbb::blocked_range<unsigned> &chunk){
 					complex_t w=complex_t(1, 0);
 					w = std::pow(wn,chunk.begin());
 					for(unsigned j=chunk.begin(); j!=chunk.end(); j++){
@@ -79,7 +79,7 @@ protected:
 						pOut[j+m] = t2; 
 						w = w*wn; 
 					}
-				}, tbb::simple_partitioner()); //outer chunk loop 
+				}, tbb::simple_partitioner());
 			}
 		}
 	}
@@ -113,18 +113,18 @@ protected:
 public:
 	fast_fourier_transform_combined ()
 	{
-		char *v_loop = getenv("HPCE_FFT_LOOP_K"); 
-		if (v_loop==NULL){
-			loop_K = 16; //set default value
+		char *K_loop_env = getenv("HPCE_FFT_LOOP_K"); 
+		if (K_loop_env != NULL){
+			K_loop = atoi(K_loop_env); 
 		}else{
-			loop_K = atoi(v_loop); //convert string to integer
+			K_loop=16; 
 		}
-
-		char *v_rec = getenv("HPCE_FFT_RECURSION_K");
-		if (v_rec==NULL){
-			recursion_K = 32; //set default value 
+	
+		char *K_recur_env = getenv("HPCE_FFT_RECURSION_K"); 
+		if (K_recur_env != NULL){
+			K_recur = atoi(K_recur_env);
 		}else{
-			recursion_K = atoi(v_rec); //convert string to integer 
+			K_recur=32;
 		}
 	}
 	virtual std::string name() const
