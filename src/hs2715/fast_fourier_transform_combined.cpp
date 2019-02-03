@@ -4,6 +4,8 @@
 #include <cassert>
 #include <cstdlib>
 #include "tbb/parallel_for.h"
+#include "tbb/task_group.h"
+
 
 namespace hpce
 {
@@ -11,10 +13,11 @@ namespace hpce
 namespace hs2715
 {
 
-class fast_fourier_transform_parfor
+class fast_fourier_transform_combined
 	: public fourier_transform
 {
-size_t K; 
+size_t loop_K; 
+size_t recursion_K; 
 protected:
 	/* Standard radix-2 FFT only supports binary power lengths */
 	virtual size_t calc_padded_size(size_t n) const
@@ -45,34 +48,30 @@ protected:
 		}else{
 			size_t m = n/2;
 
-			recurse(m,wn*wn,pIn,2*sIn,pOut,sOut);
-			recurse(m,wn*wn,pIn+sIn,2*sIn,pOut+sOut*m,sOut);
+			//Create parallel work
+			if (n>recursion_K){
+				tbb::task_group group; 
+				group.run( [&](){ recurse(m,wn*wn,pIn,2*sIn,pOut,sOut); } );
+				group.run( [&](){ recurse(m,wn*wn,pIn+sIn,2*sIn,pOut+sOut*m,sOut); } );
+				group.wait(); 
+			}else{ //Run sequential version
+				recurse(m,wn*wn,pIn,2*sIn,pOut,sOut);
+				recurse(m,wn*wn,pIn+sIn,2*sIn,pOut+sOut*m,sOut);
+			}
 
-			if(m<=K){ 
-				complex_t w=complex_t(1, 0);
+			if(m<=loop_K){ //use original code
+				complex_t w=complex_t(1,0);
 				for (size_t j=0;j<m;j++){
-				 	complex_t t1 = w*pOut[m+j];
-				  	complex_t t2 = pOut[j]-t1;
-				  	pOut[j] = pOut[j]+t1;                 /*  pOut[j] = pOut[j] + w^i pOut[m+j] */
-				  	pOut[j+m] = t2;                          /*  pOut[j] = pOut[j] - w^i pOut[m+j] */
-				  	w = w*wn;
+				 	 complex_t t1 = w*pOut[m+j];
+				 	 complex_t t2 = pOut[j]-t1;
+				 	 pOut[j] = pOut[j]+t1;                 /*  pOut[j] = pOut[j] + w^i pOut[m+j] */
+				 	 pOut[j+m] = t2;                          /*  pOut[j] = pOut[j] - w^i pOut[m+j] */
+					 w = w*wn;
 				}
-			}else{ 
-			//typedef tbb::blocked_range<unsigned> my_range_t;
-			
-			//my_range_t range(0,m,K);				
-
-				
-				tbb::parallel_for(tbb::blocked_range<unsigned>(0,m,K), [&](const tbb::blocked_range<unsigned> &chunk){
-				
-				//auto f=[&](const my_range_t &chunk){
-
-					
+			}else{ //use parallel version
+				tbb::parallel_for(tbb::blocked_range<unsigned>(0,m,loop_K), [&](const tbb::blocked_range<unsigned> &chunk){
 					complex_t w=complex_t(1, 0);
-
 					w = std::pow(wn,chunk.begin());
-
-					
 					for(unsigned j=chunk.begin(); j!=chunk.end(); j++){
 						complex_t t1 = w*pOut[m+j];
 						complex_t t2 = pOut[j]-t1; 
@@ -80,8 +79,7 @@ protected:
 						pOut[j+m] = t2; 
 						w = w*wn; 
 					}
-				}, tbb::simple_partitioner()); 
-			//tbb::parallel_for(range, f, tbb::simple_partitioner());				
+				}, tbb::simple_partitioner()); //outer chunk loop 
 			}
 		}
 	}
@@ -113,27 +111,34 @@ protected:
 	}
 
 public:
-	fast_fourier_transform_parfor(){
-		
-		char *K_env = getenv("HPCE_FFT_LOOP_K"); 
-		if (K_env != NULL){
-			K = atoi(K_env); 
+	fast_fourier_transform_combined ()
+	{
+		char *v_loop = getenv("HPCE_FFT_LOOP_K"); 
+		if (v_loop==NULL){
+			loop_K = 16; //set default value
 		}else{
-			K=16; 
+			loop_K = atoi(v_loop); //convert string to integer
+		}
+
+		char *v_rec = getenv("HPCE_FFT_RECURSION_K");
+		if (v_rec==NULL){
+			recursion_K = 32; //set default value 
+		}else{
+			recursion_K = atoi(v_rec); //convert string to integer 
 		}
 	}
 	virtual std::string name() const
-	{ return "hpce.hs2715.fast_fourier_transform_parfor"; }
+	{ return "hpce.hs2715.fast_fourier_transform_combined"; }
 
 	virtual bool is_quadratic() const
 	{ return false; }
 };
 
-std::shared_ptr<fourier_transform> Create_fast_fourier_transform_parfor()
+std::shared_ptr<fourier_transform> Create_fast_fourier_transform_combined()
 {
-	return std::make_shared<fast_fourier_transform_parfor>();
+	return std::make_shared<fast_fourier_transform_combined>();
 }
 
-}; //namespace hs2715
+}; //namespace hs2715 
 
 }; // namespace hpce

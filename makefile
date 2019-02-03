@@ -19,7 +19,8 @@ FOURIER_IMPLEMENTATION_OBJS =  \
 	src/hs2715/direct_fourier_transform_parfor_inner.o\
 	src/hs2715/direct_fourier_transform_parfor_outer.o\
 	src/hs2715/fast_fourier_transform_taskgroup.o\
-	src/hs2715/fast_fourier_transform_parfor.o
+	src/hs2715/fast_fourier_transform_parfor.o\
+	src/hs2715/fast_fourier_transform_combined.o
 
 FOURIER_OBJS = $(FOURIER_CORE_OBJS) $(FOURIER_IMPLEMENTATION_OBJS)
 

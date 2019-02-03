@@ -13,6 +13,7 @@ namespace hs2715{
 	std::shared_ptr<fourier_transform> Create_direct_fourier_transform_parfor_outer();
 	std::shared_ptr<fourier_transform> Create_fast_fourier_transform_taskgroup();
 	std::shared_ptr<fourier_transform> Create_fast_fourier_transform_parfor();
+	std::shared_ptr<fourier_transform> Create_fast_fourier_transform_combined();
 }
 
 
@@ -28,6 +29,7 @@ void fourier_transform::RegisterDefaultFactories()
 	RegisterTransformFactory("hpce.hs2715.direct_fourier_transform_parfor_outer", hpce::hs2715::Create_direct_fourier_transform_parfor_outer);
 	RegisterTransformFactory("hpce.hs2715.fast_fourier_transform_taskgroup", hpce::hs2715::Create_fast_fourier_transform_taskgroup);
 	RegisterTransformFactory("hpce.hs2715.fast_fourier_transform_parfor", hpce::hs2715::Create_fast_fourier_transform_parfor);
+	RegisterTransformFactory("hpce.hs2715.fast_fourier_transform_combined", hpce::hs2715::Create_fast_fourier_transform_combined);
 }
 
 }; // namespace hpce
