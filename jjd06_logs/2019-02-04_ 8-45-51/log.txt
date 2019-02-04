@@ -1,0 +1,43 @@
+
+hs2715, 0, Have results/direct_inner_versus_k.pdf, PASS
+hs2715, 1, Have results/direct_outer_time_versus_p.pdf, PASS
+hs2715, 2, Have results/direct_outer_strong_scaling.pdf, PASS
+hs2715, 3, Have results/direct_outer_strong_scaling.pdf, PASS
+hs2715, 4, Have results/fast_fourier_time_vs_recursion_k.pdf, PASS
+hs2715, 5, Have results/fast_fourier_recursion_versus_iteration.pdf, PASS
+hs2715, 6, Have src/hs2715/direct_fourier_transform_parfor_inner.cpp, PASS
+hs2715, 7, Have src/hs2715/direct_fourier_transform_parfor_outer.cpp, PASS
+hs2715, 8, Have src/hs2715/fast_fourier_transform_taskgroup.cpp, PASS
+hs2715, 9, Have src/hs2715/fast_fourier_transform_parfor.cpp, PASS
+hs2715, 10, Have src/hs2715/fast_fourier_transform_combined.cpp, PASS
+hs2715, 11, Have src/fourier_transform_register_factories.cpp, PASS
+Overwriting files in src directory (except for registry)
+hs2715, 12, Can build test_fourier_transform, PASS
+hs2715, 13, Can build time_fourier_transform, PASS
+hs2715, 14, Checking test_fourier_transform still lists 'hpce.direct_fourier_transform', PASS
+hs2715, 15, Checking test_fourier_transform still lists 'hpce.fast_fourier_transform', PASS
+hs2715, 16, Checking test_fourier_transform now lists 'hpce.hs2715.direct_fourier_transform_parfor_inner', PASS
+hs2715, 17, Checking test_fourier_transform now lists 'hpce.hs2715.direct_fourier_transform_parfor_outer', PASS
+hs2715, 18, Checking test_fourier_transform now lists 'hpce.hs2715.fast_fourier_transform_parfor', PASS
+hs2715, 19, Checking test_fourier_transform now lists 'hpce.hs2715.fast_fourier_transform_taskgroup', PASS
+hs2715, 20, Checking test_fourier_transform now lists 'hpce.hs2715.fast_fourier_transform_combined', PASS
+hs2715, 21, Checking direct_fourier_transform_parfor_inner.cpp calls parallel_for at some point., PASS
+hs2715, 22, Checking direct_fourier_transform_parfor_inner.cpp uses partitioner., PASS
+hs2715, 23, Checking direct_fourier_transform_parfor_outer.cpp calls parallel_for at some point., PASS
+hs2715, 24, Checking fast_fourier_transform_taskgroup.cpp uses task groups at some point., PASS
+hs2715, 25, Checking fast_fourier_transform_parfor.cpp uses parallel_for at some point., PASS
+hs2715, 26, Checking fast_fourier_transform_combined.cpp uses parallel_for., PASS
+hs2715, 27, Checking fast_fourier_transform_combined.cpp also uses task_group., PASS
+hs2715, 28, Testing direct_fourier_transform_parfor_inner (using external tester), every test should pass., PASS
+hs2715, 29, Testing direct_fourier_transform_parfor_outer (using external tester), every test should pass., PASS
+hs2715, 30, Testing fast_fourier_transform_taskgroup (using external tester), every test should pass., PASS
+hs2715, 31, Testing fast_fourier_transform_parfor (using external tester), every test should pass., PASS
+hs2715, 32, Testing fast_fourier_transform_combined (using external tester), every test should pass., PASS
+hs2715, 33, Timing hpce.hs2715.fast_fourier_transform_taskgroup with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of 2.8069504566 is more than 2.5., PASS
+hs2715, 34, Timing hpce.hs2715.fast_fourier_transform_parfor with 4 CPUs and n=2^24: check observed parallelism (totalTime/wallTime) of 2.5793641167 is more than 1.1., PASS
+hs2715, 35, Timing hpce.hs2715.fast_fourier_transform_combined with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of 3.6550904022 is more than 2.5., PASS
+hs2715, 36, For 4 CPUs, n=2^12, direct: check time for serial (7.3230921630) is greater than parfor (2.9335307140)., PASS
+hs2715, 37, For 4 CPUs, n=2^22, fast: check time for serial (3.9896665630) is at least 2x that of taskgroup (1.4962022790)., PASS
+hs2715, 38, For 4 CPUs, n=2^22, fast: check time for parfor (6.1803796570) is at least 1.5x that of combined (3.6313713260)., PASS
+
+Passed 39 out of 39 tests.
