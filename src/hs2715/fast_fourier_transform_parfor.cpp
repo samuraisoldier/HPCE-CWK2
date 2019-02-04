@@ -48,7 +48,7 @@ protected:
 			recurse(m,wn*wn,pIn,2*sIn,pOut,sOut);
 			recurse(m,wn*wn,pIn+sIn,2*sIn,pOut+sOut*m,sOut);
 
-			if(m<=K){ 
+			if(m<=K){ //if the chunks are too small do it the normal way
 				complex_t w=complex_t(1, 0);
 				for (size_t j=0;j<m;j++){
 				 	complex_t t1 = w*pOut[m+j];
@@ -57,7 +57,7 @@ protected:
 				  	pOut[j+m] = t2;                          /*  pOut[j] = pOut[j] - w^i pOut[m+j] */
 				  	w = w*wn;
 				}
-			}else{ 
+			}else{ //else parallel it
 			//typedef tbb::blocked_range<unsigned> my_range_t;
 			
 			//my_range_t range(0,m,K);				
@@ -70,7 +70,7 @@ protected:
 					
 					complex_t w=complex_t(1, 0);
 
-					w = std::pow(wn,chunk.begin());
+					w = std::pow(wn,chunk.begin()); //can this be done better
 
 					
 					for(unsigned j=chunk.begin(); j!=chunk.end(); j++){
@@ -113,7 +113,7 @@ protected:
 	}
 
 public:
-	fast_fourier_transform_parfor(){
+	fast_fourier_transform_parfor(){ //fn to get K from env once
 		
 		char *K_env = getenv("HPCE_FFT_LOOP_K"); 
 		if (K_env != NULL){

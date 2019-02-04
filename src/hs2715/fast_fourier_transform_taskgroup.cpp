@@ -93,7 +93,7 @@ protected:
 	}
 
 public:
-	fast_fourier_transform_taskgroup(){
+	fast_fourier_transform_taskgroup(){ //get k from env once - has an error unless its called this??
 		
 		char *K_env = getenv("HPCE_FFT_RECURSION_K"); 
 		if (K_env != NULL){

@@ -32,7 +32,7 @@ protected:
 		return ret;
 	}
 
-	virtual void recurse(
+	virtual void recurse( //just combine taskgroup and parfor sequentially
 		size_t n,	const complex_t &wn,
 		const complex_t *pIn, size_t sIn,
 		complex_t *pOut, size_t sOut
@@ -111,8 +111,7 @@ protected:
 	}
 
 public:
-	fast_fourier_transform_combined ()
-	{
+	fast_fourier_transform_combined(){
 		char *K_loop_env = getenv("HPCE_FFT_LOOP_K"); 
 		if (K_loop_env != NULL){
 			K_loop = atoi(K_loop_env); 

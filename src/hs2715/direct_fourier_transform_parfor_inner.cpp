@@ -49,7 +49,7 @@ protected:
 		
 		
 		for(size_t ii=0;ii<n;ii++){
-			
+			//initialise the blocked range
 			typedef tbb::blocked_range<unsigned> my_range_t;
 			size_t i = 0;
 			size_t j = n;
@@ -59,13 +59,13 @@ protected:
 			//tbb::parallel_for(size_t(0),n,[&](size_t kk){
 			//	pOut[kk] += pIn[ii] * exp( neg_im_2pi_n * (double)kk * (double)ii );
 			//});
-			
+			//auto function
 			auto f=[&](const my_range_t &chunk){
 			for(size_t kk=chunk.begin(); kk!=chunk.end(); kk++ ){
 				pOut[kk] += pIn[ii] * exp( neg_im_2pi_n * (double)kk * (double)ii );
 				}
 			};
-			
+			//call the auto fn in parallel
 			tbb::parallel_for(range, f, tbb::simple_partitioner());
 		}
 	}
@@ -97,7 +97,7 @@ protected:
 		}
 
 		for(size_t ii=0;ii<n;ii++){
-			
+			//same as forwards
 			typedef tbb::blocked_range<unsigned> my_range_t;
 			size_t i = 0;
 			size_t j = n;
