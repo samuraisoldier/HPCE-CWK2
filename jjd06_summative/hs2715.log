@@ -1,0 +1,189 @@
+
+./tmp/hs2715/hpce-2018-cw2-hs2715
+aws.md
+bin
+csv_and_pivot.md
+git.md
+hs2715.zip
+images
+include
+makefile
+readme.md
+read_tgk.cpp
+read_tgk.exe
+read_x.cpp
+read_x.exe
+results
+src
+commit 96bdaf94a8ac2b0f4ecd61a6ed6144a4c5ad4a02
+Author: samuraisoldier <24753407+samuraisoldier@users.noreply.github.com>
+Date:   Mon Feb 4 16:32:00 2019 +0000
+
+    comments
+hs2715, 0, Have results/direct_inner_versus_k.pdf, PASS
+Makeing : ./tmp/hs2715/working/results in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/results/direct_inner_versus_k.pdf ./tmp/hs2715/working/results/direct_inner_versus_k.pdf
+hs2715, 1, Have results/direct_outer_time_versus_p.pdf, PASS
+Makeing : ./tmp/hs2715/working/results in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/results/direct_outer_time_versus_p.pdf ./tmp/hs2715/working/results/direct_outer_time_versus_p.pdf
+hs2715, 2, Have results/direct_outer_strong_scaling.pdf, PASS
+Makeing : ./tmp/hs2715/working/results in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/results/direct_outer_strong_scaling.pdf ./tmp/hs2715/working/results/direct_outer_strong_scaling.pdf
+hs2715, 3, Have results/direct_outer_strong_scaling.pdf, PASS
+Makeing : ./tmp/hs2715/working/results in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/results/direct_outer_strong_scaling.pdf ./tmp/hs2715/working/results/direct_outer_strong_scaling.pdf
+hs2715, 4, Have results/fast_fourier_time_vs_recursion_k.pdf, PASS
+Makeing : ./tmp/hs2715/working/results in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/results/fast_fourier_time_vs_recursion_k.pdf ./tmp/hs2715/working/results/fast_fourier_time_vs_recursion_k.pdf
+hs2715, 5, Have results/fast_fourier_recursion_versus_iteration.pdf, PASS
+Makeing : ./tmp/hs2715/working/results in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/results/fast_fourier_recursion_versus_iteration.pdf ./tmp/hs2715/working/results/fast_fourier_recursion_versus_iteration.pdf
+hs2715, 6, Have src/hs2715/direct_fourier_transform_parfor_inner.cpp, PASS
+Makeing : ./tmp/hs2715/working/src/hs2715 in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/src/hs2715/direct_fourier_transform_parfor_inner.cpp ./tmp/hs2715/working/src/hs2715/direct_fourier_transform_parfor_inner.cpp
+dos2unix: converting file ./tmp/hs2715/working/src/hs2715/direct_fourier_transform_parfor_inner.cpp to Unix format ...
+hs2715, 7, Have src/hs2715/direct_fourier_transform_parfor_outer.cpp, PASS
+Makeing : ./tmp/hs2715/working/src/hs2715 in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/src/hs2715/direct_fourier_transform_parfor_outer.cpp ./tmp/hs2715/working/src/hs2715/direct_fourier_transform_parfor_outer.cpp
+dos2unix: converting file ./tmp/hs2715/working/src/hs2715/direct_fourier_transform_parfor_outer.cpp to Unix format ...
+hs2715, 8, Have src/hs2715/fast_fourier_transform_taskgroup.cpp, PASS
+Makeing : ./tmp/hs2715/working/src/hs2715 in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/src/hs2715/fast_fourier_transform_taskgroup.cpp ./tmp/hs2715/working/src/hs2715/fast_fourier_transform_taskgroup.cpp
+dos2unix: converting file ./tmp/hs2715/working/src/hs2715/fast_fourier_transform_taskgroup.cpp to Unix format ...
+hs2715, 9, Have src/hs2715/fast_fourier_transform_parfor.cpp, PASS
+Makeing : ./tmp/hs2715/working/src/hs2715 in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/src/hs2715/fast_fourier_transform_parfor.cpp ./tmp/hs2715/working/src/hs2715/fast_fourier_transform_parfor.cpp
+dos2unix: converting file ./tmp/hs2715/working/src/hs2715/fast_fourier_transform_parfor.cpp to Unix format ...
+hs2715, 10, Have src/hs2715/fast_fourier_transform_combined.cpp, PASS
+Makeing : ./tmp/hs2715/working/src/hs2715 in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/src/hs2715/fast_fourier_transform_combined.cpp ./tmp/hs2715/working/src/hs2715/fast_fourier_transform_combined.cpp
+dos2unix: converting file ./tmp/hs2715/working/src/hs2715/fast_fourier_transform_combined.cpp to Unix format ...
+hs2715, 11, Have src/fourier_transform_register_factories.cpp, PASS
+Makeing : ./tmp/hs2715/working/src in /home/jjd06/hpce-2018-private/scripts/cw2
+cp ./tmp/hs2715/hpce-2018-cw2-hs2715/src/fourier_transform_register_factories.cpp ./tmp/hs2715/working/src/fourier_transform_register_factories.cpp
+dos2unix: converting file ./tmp/hs2715/working/src/fourier_transform_register_factories.cpp to Unix format ...
+Overwriting files in src directory (except for registry)
+(cd ./tmp/hs2715/working/src && g++ -std=c++14 -O3 -msse4 -g -I ../include direct_fourier_transform.cpp fast_fourier_transform.cpp fourier_transform.cpp fourier_transform_register_factories.cpp hs2715/*.cpp /home/jjd06/hpce-2018-private/scripts/cw2/scripts/bench_test_fourier_transform.cpp -o ../test_fourier_transform -ltbb) &> ./tmp/hs2715/log/build_test_fourier.log
+hs2715, 12, Can build test_fourier_transform, PASS
+(cd ./tmp/hs2715/working/src && g++ -std=c++14 -O3 -msse4 -g -I ../include direct_fourier_transform.cpp fast_fourier_transform.cpp fourier_transform.cpp fourier_transform_register_factories.cpp hs2715/*.cpp /home/jjd06/hpce-2018-private/scripts/cw2/scripts/bench_time_fourier_transform.cpp -o ../time_fourier_transform -ltbb) &> ./tmp/hs2715/log/build_time_fourier.log
+hs2715, 13, Can build time_fourier_transform, PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.direct_fourier_transform -
+hpce.direct_fourier_transform
+hs2715, 14, Checking test_fourier_transform still lists 'hpce.direct_fourier_transform', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.fast_fourier_transform -
+hpce.fast_fourier_transform
+hs2715, 15, Checking test_fourier_transform still lists 'hpce.fast_fourier_transform', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.direct_fourier_transform_parfor_inner -
+hpce.hs2715.direct_fourier_transform_parfor_inner
+hs2715, 16, Checking test_fourier_transform now lists 'hpce.hs2715.direct_fourier_transform_parfor_inner', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.direct_fourier_transform_parfor_outer -
+hpce.hs2715.direct_fourier_transform_parfor_outer
+hs2715, 17, Checking test_fourier_transform now lists 'hpce.hs2715.direct_fourier_transform_parfor_outer', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.fast_fourier_transform_parfor -
+hpce.hs2715.fast_fourier_transform_parfor
+hs2715, 18, Checking test_fourier_transform now lists 'hpce.hs2715.fast_fourier_transform_parfor', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.fast_fourier_transform_taskgroup -
+hpce.hs2715.fast_fourier_transform_taskgroup
+hs2715, 19, Checking test_fourier_transform now lists 'hpce.hs2715.fast_fourier_transform_taskgroup', PASS
+(cd $WORKING_DIR && /usr/bin/timeout 60 ./test_fourier_transform 2>&1) | grep hpce.$SL.fast_fourier_transform_combined -
+hpce.hs2715.fast_fourier_transform_combined
+hs2715, 20, Checking test_fourier_transform now lists 'hpce.hs2715.fast_fourier_transform_combined', PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/direct_fourier_transform_parfor_inner.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/direct_fourier_transform_parfor_inner.cpp \ | grep parallel_for -
+   tbb::parallel_for(range, f, tbb::simple_partitioner());
+   tbb::parallel_for(range, f, tbb::simple_partitioner());
+hs2715, 21, Checking direct_fourier_transform_parfor_inner.cpp calls parallel_for at some point., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/direct_fourier_transform_parfor_inner.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/direct_fourier_transform_parfor_inner.cpp \ | grep partitioner -
+   tbb::parallel_for(range, f, tbb::simple_partitioner());
+   tbb::parallel_for(range, f, tbb::simple_partitioner());
+hs2715, 22, Checking direct_fourier_transform_parfor_inner.cpp uses partitioner., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/direct_fourier_transform_parfor_outer.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/direct_fourier_transform_parfor_outer.cpp \ | grep parallel_for -
+  tbb::parallel_for(size_t(0),n,[&](size_t kk){
+  tbb::parallel_for(size_t(0),n,[&](size_t kk){
+hs2715, 23, Checking direct_fourier_transform_parfor_outer.cpp calls parallel_for at some point., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/fast_fourier_transform_taskgroup.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/fast_fourier_transform_taskgroup.cpp \ | grep task_group -
+    tbb::task_group group;
+hs2715, 24, Checking fast_fourier_transform_taskgroup.cpp uses task groups at some point., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/fast_fourier_transform_parfor.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/fast_fourier_transform_parfor.cpp \ | grep parallel_for -
+    tbb::parallel_for(tbb::blocked_range<unsigned>(0,m,K), [&](const tbb::blocked_range<unsigned> &chunk){
+hs2715, 25, Checking fast_fourier_transform_parfor.cpp uses parallel_for at some point., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/fast_fourier_transform_combined.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/fast_fourier_transform_combined.cpp \ | grep parallel_for -
+    tbb::parallel_for(tbb::blocked_range<unsigned>(0,m,K_loop), [&](const tbb::blocked_range<unsigned> &chunk){
+hs2715, 26, Checking fast_fourier_transform_combined.cpp uses parallel_for., PASS
+(cd $WORKING_DIR/src && g++ -std=c++14 -E -I ../include $SL/fast_fourier_transform_combined.cpp -o -) \ | $SCRIPTS_DIR/extract_preprocessed_part.pl $SL/fast_fourier_transform_combined.cpp \ | grep task_group -
+    tbb::task_group group;
+hs2715, 27, Checking fast_fourier_transform_combined.cpp also uses task_group., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.direct_fourier_transform_parfor_inner ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_direct_fourier_transform_parfor_inner.log
+hs2715, 28, Testing direct_fourier_transform_parfor_inner (using external tester), every test should pass., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.direct_fourier_transform_parfor_outer ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_direct_fourier_transform_parfor_outer.log
+hs2715, 29, Testing direct_fourier_transform_parfor_outer (using external tester), every test should pass., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.fast_fourier_transform_taskgroup ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_fast_fourier_transform_taskgroup.log
+hs2715, 30, Testing fast_fourier_transform_taskgroup (using external tester), every test should pass., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.fast_fourier_transform_parfor ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_fast_fourier_transform_parfor.log
+hs2715, 31, Testing fast_fourier_transform_parfor (using external tester), every test should pass., PASS
+[[ -f $WORKING_DIR/test_fourier_transform ]] && ( /usr/bin/timeout -k ${MAXLIMIT} ${TIMELIMIT} $WORKING_DIR/test_fourier_transform hpce.$SL.fast_fourier_transform_combined ) 2>&1 | ${LOG_THROTTLE} > $LOG_DIR/test_fast_fourier_transform_combined.log
+hs2715, 32, Testing fast_fourier_transform_combined (using external tester), every test should pass., PASS
+
+Command to check for parallelism:
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.hs2715.fast_fourier_transform_taskgroup 4 20
+user = 0.628, time=0.208762
+Output = parallelism = 3.0082054216, time = 0.2087623390
+echo parallelism = X 3.0082054216 X
+
+ Checking condition : 3.0082054216 > 2.5
+hs2715, 33, Timing hpce.hs2715.fast_fourier_transform_taskgroup with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of 3.0082054216 is more than 2.5., PASS
+
+Command to check for parallelism:
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.hs2715.fast_fourier_transform_parfor 4 24
+user = 42.612, time=15.8994
+Output = parallelism = 2.6801088237, time = 15.8993543930
+echo parallelism = X 2.6801088237 X
+
+ Checking condition : 2.6801088237 > 1.1
+hs2715, 34, Timing hpce.hs2715.fast_fourier_transform_parfor with 4 CPUs and n=2^24: check observed parallelism (totalTime/wallTime) of 2.6801088237 is more than 1.1., PASS
+
+Command to check for parallelism:
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.hs2715.fast_fourier_transform_combined 4 20
+user = 1.5, time=0.399479
+Output = parallelism = 3.7548939974, time = 0.3994786540
+echo parallelism = 3.7548939974
+
+ Checking condition : 3.7548939974 > 2.5
+hs2715, 35, Timing hpce.hs2715.fast_fourier_transform_combined with 4 CPUs and n=2^20: check observed parallelism (totalTime/wallTime) of 3.7548939974 is more than 2.5., PASS
+
+Command timing :
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.direct_fourier_transform 4 12 
+Output = parallelism = 0.9996464915, time = 4.9817610950.
+
+Command timing :
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.hs2715.direct_fourier_transform_parfor_inner 4 12
+Output = parallelism = 3.9282893551, time = 1.7310333800.
+true
+
+ Checking condition : 4.9817610950 > 1.7310333800
+hs2715, 36, For 4 CPUs, n=2^12, direct: check time for serial (4.9817610950) is greater than parfor (1.7310333800)., PASS
+
+Command timing :
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.fast_fourier_transform 4 22
+Output = parallelism = 0.9781496898, time = 2.4004505900.
+
+Command timing :
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.hs2715.fast_fourier_transform_parfor 4 22
+Output = parallelism = 2.6190169044, time = 3.7174254140.
+
+Command timing :
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.hs2715.fast_fourier_transform_taskgroup 4 22 
+Output = parallelism = 3.1147534766, time = 0.8745475430.
+
+Command timing :
+/usr/bin/timeout -k 70 60 ./tmp/hs2715/working/time_fourier_transform hpce.hs2715.fast_fourier_transform_combined 4 22
+Output = parallelism = 3.7855898704, time = 1.7709261250.
+true
+
+ Checking condition : 2.4004505900 > 2 * 0.8745475430
+hs2715, 37, For 4 CPUs, n=2^22, fast: check time for serial (2.4004505900) is at least 2x that of taskgroup (0.8745475430)., PASS
+true
+
+ Checking condition : 2 * 3.7174254140 > 3 * 1.7709261250
+hs2715, 38, For 4 CPUs, n=2^22, fast: check time for parfor (3.7174254140) is at least 1.5x that of combined (1.7709261250)., PASS
+
+Passed 39 out of 39 tests.
